@@ -68,7 +68,7 @@ async function main() {
         if (req.query.description) {
             critera['description'] = { $regex: req.query.description, $options: 'i' };
         }
-        if (req.query.food) {
+        if (req.query.playerData) {
             critera[''] = { $regex: req.query.playerData, $options: 'i' }
         }
         console.log(critera);
@@ -105,6 +105,7 @@ async function main() {
         })
         res.json(results);
         console.log(results);
+        
     })
 
 
