@@ -98,9 +98,9 @@ async function main() {
 
     // Start of Delete
     app.delete('/showplayer/:playerid', async function (req, res) {
-        let id = req.params.playerid;
+        // let id = req.params.playerid;
         let db = MongoUtil.getDB();
-        let results = await db.collection('tesingTwo').deleteOne({
+        let results = await db.collection('tesingTwo').remove({
             "_id": ObjectId(req.params.playerid)
         })
         res.json(results);
