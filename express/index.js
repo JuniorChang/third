@@ -57,7 +57,7 @@ async function main() {
 
     app.get('/showplayer', async function (req, res) {
         let db = MongoUtil.getDB();
-        let results = await db.collection('tesingTwo').find({}).join("");
+        let results = await db.collection('tesingTwo').find({}).toArray();
         res.json(results);
     })
 
